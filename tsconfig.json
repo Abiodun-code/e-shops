@@ -3,9 +3,18 @@
   "compilerOptions": {
     "strict": true,
 
-    "baseUrl": ".",
+    // "baseUrl": ".",
     "paths": {
-      "~/*": ["src/*"]
+      "@/components/*": ["./src/components/*"],
+      "@/services/*": ["./src/services/*"],
+      "@/shared/*": ["./src/shared/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/assets/*": ["./assets/*"],
+      "@/types/*": ["./src/types/*"],
+      "@/constants/*": ["./src/constants/*"],
+      "@/navigation/*": ["./src/navigation/*"],
+      "@/screens/*": ["./src/screens/*"],
+      "@/hooks/*": ["./src/hooks/*"],
     }
   }
 }

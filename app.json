@@ -3,6 +3,7 @@
     "name": "e-shops",
     "slug": "e-shops",
     "version": "1.0.0",
+    "newArchEnabled": true,
     "web": {
       "favicon": "./assets/favicon.png"
     },

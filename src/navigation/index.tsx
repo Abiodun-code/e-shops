@@ -1,30 +1,16 @@
+import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import NotAuthenticated from './not-authenticated';
+import Authenticated from './authenticated';
 
-import { BackButton } from '../components/BackButton';
-import Details from '../screens/details';
-import Overview from '../screens/overview';
 
-export type RootStackParamList = {
-  Overview: undefined;
-  Details: { name: string };
-};
+const Main = () => {
 
-const Stack = createStackNavigator<RootStackParamList>();
-
-export default function RootStack() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Overview">
-        <Stack.Screen name="Overview" component={Overview} />
-        <Stack.Screen
-          name="Details"
-          component={Details}
-          options={({ navigation }) => ({
-            headerLeft: () => <BackButton onPress={navigation.goBack} />,
-          })}
-        />
-      </Stack.Navigator>
+      <NotAuthenticated/>
     </NavigationContainer>
   );
-}
+};
+
+export default Main;

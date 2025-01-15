@@ -1,0 +1,23 @@
+/* eslint-disable import/order */
+/* eslint-disable prettier/prettier */
+import React from 'react'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { NOT_AUTHENTICATED_PARAM } from '@/types/not-authenticated'
+import { NOT_AUTHENTICATED_STACK } from './stackData'
+
+const {Navigator, Screen} = createNativeStackNavigator<NOT_AUTHENTICATED_PARAM>()
+
+const NotAuthenticated = () => {
+
+  const Screens = NOT_AUTHENTICATED_STACK.map((item, index)=>(
+    <Screen key={index} name={item.name} component={item.screen}/>
+  ))
+
+  return (
+    <Navigator screenOptions={{headerShown:false}}>
+      {Screens}
+    </Navigator>
+  )
+}
+
+export default NotAuthenticated

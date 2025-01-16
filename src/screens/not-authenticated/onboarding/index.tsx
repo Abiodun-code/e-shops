@@ -11,12 +11,12 @@ const Onboarding = ({navigation}:NOT_AUTH_PROP) => {
     <Container bgColor={Colors.blue} padX={hp(2)}>
       <View style={{ flex: 1 }}>
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <Title color={Colors.white} variant='titleLarge'>Eshop 📦🛒🌐</Title>
+          <Title color={Colors.white} font={'i700'} variant='headlineMedium'>Eshop 📦🛒🌐</Title>
         </View>
         <View style={{ flex: 1, justifyContent: 'flex-end' }}>
           {SOCIAL_HANDLER.map((item, index) => (
             <Button key={index} p={hp(2)} mb={hp(2)} borderW={hp(.2)} borderC={Colors.white} press={() => navigation.navigate(item.path)}>
-              <Title font='i500' color={Colors.white}>{item.title}</Title>
+              <Title font='i500' variant={'titleMedium'} color={Colors.white}>{item.title}</Title>
             </Button>
           ))}
         </View>

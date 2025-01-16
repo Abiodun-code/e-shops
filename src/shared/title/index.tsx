@@ -26,7 +26,7 @@ const Title = ({ children, font, variant, color, showIcon = false, textA, textT,
   const navigation = useNavigation();
 
   return (
-    <View style={{ flexDirection: 'row', alignItems: 'center', width:width }}>
+    <View style={{ flexDirection: 'row', alignItems: 'center', width:width, alignContent:'center' }}>
       {showIcon && (
         <TouchableOpacity onPress={() => navigation.goBack()} style={{backgroundColor: iconBg, padding: iconP, borderRadius: iconR}}>
           <MaterialIcons name="arrow-back-ios-new" size={iconSize || hp(3)} color={iconColor || "black"} />
@@ -34,8 +34,8 @@ const Title = ({ children, font, variant, color, showIcon = false, textA, textT,
       )}
 
       <Text
-        variant={variant || 'titleMedium'}
-        style={{ fontFamily: font || 'i700', color: color, textAlign: textA || 'center', flex: 1, textTransform: textT }}
+        variant={variant}
+        style={{ fontFamily: font, color: color, textAlign: textA || 'center', flex: 1, textTransform: textT }}
       >
         {children}
       </Text>

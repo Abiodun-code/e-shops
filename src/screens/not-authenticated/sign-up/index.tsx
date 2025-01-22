@@ -14,18 +14,15 @@ const SignUp = ({navigation}: NOT_AUTH_PROP) => {
       <View style={{ flex: 1, justifyContent: 'center', rowGap: hp(3) }}>
         <View style={{ rowGap: hp(.5) }}>
           <Title font={'i500'} variant={'displaySmall'} textA={'left'}>Welcome</Title>
-          <Text variant='titleLarge' style={{ fontFamily: 'i400', }}>Create account with us</Text>
+          <Text variant='titleLarge' style={{ fontFamily: 'i400', }}>Create account with eShop</Text>
         </View>
         <View>
           <CustomInput label='First Name' textColor={Colors.black} activeOutlineColor={Colors.blue} cursorColor={Colors.black} bg={Colors.blue}/>
           <CustomInput label='Last Name' textColor={Colors.black} activeOutlineColor={Colors.blue} cursorColor={Colors.black} bg={Colors.blue} />
           <CustomInput label='Email' textColor={Colors.black} activeOutlineColor={Colors.blue} cursorColor={Colors.black} bg={Colors.blue} />
           <CustomInput label='Password' textColor={Colors.black} activeOutlineColor={Colors.blue} cursorColor={Colors.black} bg={Colors.blue} />
-          <Button mb={hp(2.5)} bg={Colors.white}>
-            <Title textA={'right'} font={'i500'} variant={'titleSmall'}>Forget password</Title>
-          </Button>
           <Button bg={Colors.blue} p={hp(2)} press={() => {navigation.navigate(NOT_AUTHENTICATED_PATH.VerifyOtp)}}>
-            <Title font={'i700'} variant={'titleSmall'} color={Colors.white}>Create account</Title>
+            <Title font={'i700'} variant={'titleSmall'} color={Colors.white}>Continue</Title>
           </Button>
         </View>
       </View>

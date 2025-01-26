@@ -1,6 +1,6 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
-import { AntDesign, Octicons, Ionicons, EvilIcons } from '@expo/vector-icons'
+import { AntDesign, Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/Colors';
 
 type Props = {
@@ -13,8 +13,6 @@ const CustomTab = ({ state, descriptors, navigation }: Props) => {
 
   const icons = {
     Home: (props: any) => <AntDesign name='home' size={hp(3.5)} color={Colors.white} {...props} />,
-    Statistic: (props: any) => <Ionicons name="stats-chart-outline" size={hp(3.5)} color={Colors.white} {...props} />,
-    Wallet: (props: any) => <Ionicons name="wallet-outline" size={hp(3.5)} color={Colors.white} {...props} />,
     Setting: (props: any) => <Ionicons name='person-outline' size={hp(3.5)} color={Colors.white} {...props} />
   }
 
@@ -22,9 +20,9 @@ const CustomTab = ({ state, descriptors, navigation }: Props) => {
     <View
       style={{
         bottom: hp(0),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         width: '100%',
-        paddingVertical: hp(2),
+        paddingVertical: hp(1),
         borderTopWidth: hp(.1),
         borderTopColor: Colors.gray,
         flexDirection: 'row',
@@ -69,19 +67,19 @@ const CustomTab = ({ state, descriptors, navigation }: Props) => {
             style={{flex: 1, alignItems:'center'}}
           >
             {isFocused ? (
-              <View >
+              <View>
                 {icons[route.name]({
                   color: Colors.blue, // Change icon color when focused
                 })}
               </View>
             ) : (
               icons[route.name]({
-                color: Colors.white, // Default icon color when not focused
+                color: Colors.black, // Default icon color when not focused
               })
             )}
-            {/* <Text style={{ color: isFocused ? Colors.deepPrimary : Colors.black, fontFamily: 'i400', fontSize: hp(1.5) }}>
+            <Text style={{ color: isFocused ? Colors.blue : Colors.black, fontFamily: 'i500', fontSize: hp(1.5) }}>
               {label}
-            </Text> */}
+            </Text>
           </TouchableOpacity>
         );
       })}
@@ -89,4 +87,4 @@ const CustomTab = ({ state, descriptors, navigation }: Props) => {
   );
 }
 
-export default CustomTab
+export default CustomTab;

@@ -18,8 +18,9 @@ export const loginUser = createAsyncThunk('auth/login', async({email, password}:
       return rejectWithValue({message: "You are not authorized to access this page"});
     }
 
-    await AsyncStorage.setItem('accessToken', accessToken)
+    await AsyncStorage.setItem('accessTokenss', accessToken)
     await AsyncStorage.setItem('refreshToken', refreshToken)
+    await AsyncStorage.setItem('role', role)
 
     dispatch(setAuth({accessToken, refreshToken}))
 

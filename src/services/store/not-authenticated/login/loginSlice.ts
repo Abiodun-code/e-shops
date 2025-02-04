@@ -2,7 +2,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { loginUser, logoutUser } from "./loginThunk";
 
-
 const initialState = {
   error: null,
   loading: false,
@@ -10,6 +9,7 @@ const initialState = {
   refreshToken: "",
   success: false,
 }
+
 export const loginSlice = createSlice({
   name: "login",
   initialState,
@@ -25,7 +25,6 @@ export const loginSlice = createSlice({
     }
   },
   extraReducers: (builder) => {
-
     builder
     .addCase(loginUser.pending, (state, action) => {
       state.loading = true;

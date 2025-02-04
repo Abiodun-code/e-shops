@@ -1,12 +1,24 @@
-import { View, ScrollView } from 'react-native'
-import React from 'react'
+import { View, ScrollView, Alert } from 'react-native'
+import React, { useState } from 'react'
+import { Text } from 'react-native-paper'
 import { Button, Container, CustomInput, Title } from '@/shared/index'
 import { StatusBar } from 'expo-status-bar'
+import { NOT_AUTH_PROP } from '@/types/index'
 import { hp } from '@/utils/responsiveHelper'
 import { Colors } from '@/constants/Colors'
-import { Text } from 'react-native-paper'
 
-const VerifyOtp = () => {
+const VerifyOtp = ({ navigation, route }: NOT_AUTH_PROP) => {
+
+  // const { email, password } = route.params as { email: string; password: string }
+  // console.log(email, password);
+
+  const [otp, setOtp] = useState('');
+  const handleVerify = ()=>{
+    if (!otp.trim() || isNaN(Number(otp))) {
+      Alert.alert('Enter valid otp')
+    }
+  }
+  
   return (
     <Container padX={hp(2)} bgColor={Colors.white}>
       <Title showIcon={true} font={'i700'} variant={'titleMedium'} iconBg={Colors.blue} iconP={hp(1.2)} iconR={hp(1)} iconColor={Colors.white}>{""}</Title>
